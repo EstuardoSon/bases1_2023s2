@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6BFCDC5F-023B-19F6-878E-5AF9A7613FB8" name="DETALLE_VOTO">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>9E006FAE-DCEF-2960-8B5F-BFF9020DC594</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="CANDIDATO_id_candidato" id="6DFC597B-7C67-6466-5D8C-B85D3BB9C211">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>A5C46A09-33D8-D28D-8711-D15B4D966CE9</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="80CA5B1E-4EAB-18DB-A9BB-7A407D20E519" referredColumn="52F5A274-F4CC-61CE-62EE-E1D802E59413"/>
+</associations>
+</Column>
+<Column name="VOTO_id_voto" id="9AF4BA33-04CB-904E-D7DC-87BD30A12341">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:11:35 UTC</createdTime>
+<generatorID>410CA121-1B14-D803-B9E9-6244033F8B4A</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="2BEC221B-2C82-0340-4167-1E998F5ECF10" referredColumn="D68905D9-7482-8566-6190-93A868261D65"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="E1348191-8EFB-B8D6-7352-84DF0160D4F9" name="DETALLE_VOTO_PK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>83620C87-D026-7E54-077F-606556F3320C</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="C7123433-EBA6-32F2-96F8-9189FEC9EA94" name="DETALLE_VOTO_CANDIDATO_FK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>62165520-728D-E5D4-105E-124B3E19A96E</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6DFC597B-7C67-6466-5D8C-B85D3BB9C211"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="721798FB-E974-CDF7-5464-5F28527FDE8B" name="DETALLE_VOTO_VOTO_FK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:16:44 UTC</createdTime>
+<generatorID>9954B857-AEF7-5A51-3009-81F0F2F6F66A</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9AF4BA33-04CB-904E-D7DC-87BD30A12341"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

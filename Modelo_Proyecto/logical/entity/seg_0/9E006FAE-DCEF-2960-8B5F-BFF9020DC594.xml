@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="9E006FAE-DCEF-2960-8B5F-BFF9020DC594" name="DETALLE_VOTO">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 16:23:54 UTC</createdTime>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_candidato" id="A5C46A09-33D8-D28D-8711-D15B4D966CE9">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 16:56:15 UTC</createdTime>
+<generatorID>62165520-728D-E5D4-105E-124B3E19A96E</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
+</engineerTo>
+<referedAttribute>5461F591-9752-8412-4F54-452F2A9E08F9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="id_voto" id="410CA121-1B14-D803-B9E9-6244033F8B4A">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:11:05 UTC</createdTime>
+<generatorID>9954B857-AEF7-5A51-3009-81F0F2F6F66A</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
+</engineerTo>
+<referedAttribute>E4519A9C-3C57-0A84-8FF5-840275835609</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="83620C87-D026-7E54-077F-606556F3320C" name="DETALLE_VOTO PK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 16:28:21 UTC</createdTime>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="false"/>
+</engineerTo>
+<pk>true</pk>
+</identifier>
+</identifiers>
+</Entity>

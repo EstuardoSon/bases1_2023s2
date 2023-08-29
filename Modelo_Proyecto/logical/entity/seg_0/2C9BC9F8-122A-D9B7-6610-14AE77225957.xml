@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2C9BC9F8-122A-D9B7-6610-14AE77225957" name="CARGO">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 16:45:15 UTC</createdTime>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id_cargo" id="FA4D2B69-AC65-D894-5D6F-482E06F15F7B">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 16:45:48 UTC</createdTime>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cargo" id="77311EFC-70E7-E29F-78B5-255473EDF466">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 16:45:48 UTC</createdTime>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="4C9C9544-47F7-6EF1-1C84-00CB7722BE86" name="CARGO PK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 16:45:50 UTC</createdTime>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="false"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>FA4D2B69-AC65-D894-5D6F-482E06F15F7B</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

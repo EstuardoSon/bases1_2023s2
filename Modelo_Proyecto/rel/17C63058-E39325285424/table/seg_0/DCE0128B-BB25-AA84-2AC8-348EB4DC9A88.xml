@@ -1,0 +1,63 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DCE0128B-BB25-AA84-2AC8-348EB4DC9A88" name="MESA">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>C76FBEAF-2167-008C-89F9-D313A360C464</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="id_mesa" id="E72C350B-5EA7-3472-FEC8-9997BFE226EA">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>2A7C581B-EF34-F810-7066-69894A1BB7FC</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPARTAMENTO_id_departamento" id="AF90BC8C-D370-FD83-943B-C6E86AF7E876">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>1F5CCA6D-D371-5A8A-615F-19AD01DA62D7</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="082C4161-62F5-EF3A-813C-A55392E50FFD" referredColumn="FF30DDBE-BFE4-DD77-A55C-D50034B31848"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="9DFE39D3-53D9-3B66-8EA6-F6E8E51C7874" name="MESA_PK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>CCE33CD5-F94B-18E2-35D8-00CF593895C3</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E72C350B-5EA7-3472-FEC8-9997BFE226EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8F0EE427-9012-932E-1C82-760C5590A7FB" name="MESA_DEPARTAMENTO_FK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>07CDECA3-BFE7-021D-7F2E-D46CDF9BB554</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF90BC8C-D370-FD83-943B-C6E86AF7E876"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
