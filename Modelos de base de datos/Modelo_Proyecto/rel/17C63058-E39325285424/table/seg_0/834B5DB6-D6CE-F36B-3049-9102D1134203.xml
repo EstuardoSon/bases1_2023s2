@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="834B5DB6-D6CE-F36B-3049-9102D1134203" name="CIUDADANO">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>6DE21844-F4AD-0C50-0D4C-EF2F1314C219</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="dpi" id="BE5D4B7A-FAFB-FE14-0A29-4EFD11E9AD43">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>49BEF12B-813D-C503-EC65-300684819BAD</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>13</dataTypeSize>
+<ownDataTypeParameters>13,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="nombre" id="37528FB9-35A8-4E9C-1918-945AC71348DD">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>E55CE985-8B1C-AF39-73D9-45928099A4F0</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="apellido" id="763C57A9-ED58-311B-35C8-D675BD89FC39">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>97F6755F-ADEF-596B-4D9B-FADBBA66F7B9</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="direccion" id="36C2A944-291F-8A08-2C7F-60DB761EB33B">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>50187B7F-0E39-4FDB-00B4-F7790BD4D773</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100</dataTypeSize>
+<ownDataTypeParameters>100,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="telefono" id="C34EAB07-6C42-69CD-C57B-2EDC73FF27FE">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>35554890-064C-0A0C-6D29-C4BFB7B391D3</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>15</dataTypeSize>
+<ownDataTypeParameters>15,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="edad" id="6AF304C1-C963-3992-24B6-764BAC9A67DD">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>9CED2BAF-2370-D875-27BA-A977C00840D6</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="genero" id="858F2394-4391-4F93-F5BB-C3907C0E0899">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>E30D6769-4C97-EA17-1FAA-C4FC179D93E4</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ECC7476C-76EC-225F-FD12-1DF23C0808E3" name="CIUDADANO_PK">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-08-29 17:03:17 UTC</createdTime>
+<generatorID>37CF001B-1CEF-CBF8-97B4-281C4B62293D</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BE5D4B7A-FAFB-FE14-0A29-4EFD11E9AD43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
