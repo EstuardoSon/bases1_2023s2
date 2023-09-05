@@ -70,7 +70,15 @@ SELECT * FROM MESA;
 SELECT * FROM VOTO;
 SELECT * FROM DEPARTAMENTO;
 SELECT * FROM DETALLE_VOTO;
+SELECT * FROM TEMP;
 
+-- Extraer votos
+SELECT id_voto,dpi,mesa,fecha_hora FROM TEMP GROUP BY id_voto,dpi,mesa,fecha_hora;
+
+-- Extraer detalle voto
+SELECT id_voto,id_candidato FROM TEMP;
+
+-- Presidente y vice por partido
 SELECT
     P.nombre AS presidente,
     V.nombre AS vicepresidente,
@@ -85,6 +93,7 @@ WHERE
     P.cargo = 1
     AND V.cargo = 2;
 
+-- Cantidad diputados por partido
 SELECT Partido.nombre as partido, count(C.id) as "Cantidad de Candidatos"
 FROM Candidato C
 INNER JOIN
@@ -94,3 +103,31 @@ WHERE
 GROUP BY
     Partido.id, PARTIDO.nombre
 ;
+
+-- Alcande por partido
+SELECT Partido.nombre as partido, C.nombre as alcalde
+FROM Candidato C
+INNER JOIN
+    PARTIDO Partido ON C.partido = Partido.id
+WHERE
+    C.cargo=6
+;
+
+-- Cantidad candidatos por partido
+SELECT P.nombre as partido, 
+(SELECT COUNT(*) FROM CANDIDATO WHERE cargo = 1 AND partido=P.id) as presidentes,
+(SELECT COUNT(*) FROM CANDIDATO WHERE cargo = 2 AND partido=P.id) as vicepresidentes,
+(SELECT COUNT(*) FROM CANDIDATO WHERE (cargo = 3 OR cargo = 4 OR cargo = 5) AND partido=P.id) as diputados,
+(SELECT COUNT(*) FROM CANDIDATO WHERE cargo = 6 AND partido=P.id) as alcaldes
+FROM PARTIDO P;
+
+-- Votos por departamento
+SELECT D.nombre AS DEPARTAMENTO, COUNT(DV.voto) AS "CANTIDAD DE VOTOS" FROM DEPARTAMENTO D 
+INNER JOIN MESA M ON M.departamento = D.id 
+INNER JOIN VOTO V ON V.mesa = M.id 
+INNER JOIN DETALLE_VOTO DV ON DV.voto = V.id
+GROUP BY D.nombre, D.id 
+;
+
+-- Votos nulos
+SELECT COUNT(*) AS NULOS FROM DETALLE_VOTO WHERE candidato = -1;
