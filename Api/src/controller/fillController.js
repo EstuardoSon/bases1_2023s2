@@ -4,7 +4,7 @@ const { error } = require("console");
 const connection = getConnection();
 
 exports.crearmodelo = async (req, res) => {
-
+  // Cración de las tablas del modelo
   const result = await connection.query(
     `CREATE TABLE IF NOT EXISTS CIUDADANO(dpi VARCHAR(13) PRIMARY KEY,nombre VARCHAR(50),apellido VARCHAR(50),direccion VARCHAR(100),telefono VARCHAR(15),edad INT,genero VARCHAR(10));`
   );
@@ -34,6 +34,7 @@ exports.crearmodelo = async (req, res) => {
 };
 
 exports.eliminarmodelo = async (req, res) => {
+  // Eliminar las tablas del modelo
   const result5 = await connection.query(`DROP TABLE IF EXISTS DETALLE_VOTO;`);
   const result4 = await connection.query(`DROP TABLE IF EXISTS CANDIDATO;`);
   const result3 = await connection.query(`DROP TABLE IF EXISTS CARGO;`);
@@ -47,6 +48,9 @@ exports.eliminarmodelo = async (req, res) => {
 };
 
 exports.cargartabtemp = async (req, res) => {
+  //////////////////////////////// CARGAR DATOS EN TABLAS TEMPORALES ////////////////////////////////
+
+  // Creación de las tablas temporales
   await connection.query(
     `CREATE TABLE IF NOT EXISTS TEMP(id_voto int,id_candidato int,dpi varchar(13),mesa int,fecha_hora datetime);`
   );
@@ -77,6 +81,7 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("tablas temporales creadas");
 
+  // Lectura del archivo votaciones.csv
   let data = fs.readFileSync("src/csv/votaciones.csv", "utf8");
   let rows = data.split("\r\n").slice(1, data.length - 1);
 
@@ -99,6 +104,7 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("votos cargados");
 
+  // Lectura de los archivos ciudadanos.csv
   data = fs.readFileSync("src/csv/ciudadanos.csv", "utf8");
   rows = data.split("\r\n").slice(1, data.length - 1);
 
@@ -118,6 +124,7 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("ciudadanos cargados");
 
+  // Lectura de los archivos departamentos.csv
   data = fs.readFileSync("src/csv/departamentos.csv", "utf8");
   rows = data.split("\r\n").slice(1, data.length - 1);
 
@@ -137,6 +144,7 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("departamentos cargados");
 
+  // Lectura de los archivos mesas.csv
   data = fs.readFileSync("src/csv/mesas.csv", "utf8");
   rows = data.split("\r\n").slice(1, data.length - 1);
 
@@ -156,6 +164,7 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("mesas cargadas");
 
+  // Lectura de los archivos partidos.csv
   data = fs.readFileSync("src/csv/partidos.csv", "utf8");
   rows = data.split("\r\n").slice(1, data.length - 1);
 
@@ -177,6 +186,7 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("partidos cargados");
 
+  // Lectura de los archivos cargos.csv
   data = fs.readFileSync("src/csv/cargos.csv", "utf8");
   rows = data.split("\r\n").slice(1, data.length - 1);
 
@@ -196,6 +206,7 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("cargos cargados");
 
+  // Lectura de los archivos candidatos.csv
   data = fs.readFileSync("src/csv/candidatos.csv", "utf8");
   rows = data.split("\r\n").slice(1, data.length - 1);
 
@@ -218,22 +229,8 @@ exports.cargartabtemp = async (req, res) => {
 
   console.log("candidatos cargados");
 
-  res.send("Tabla temporal creada");
-};
-
-exports.eliminartabtemp = async (req, res) => {
-  await connection.query(`DELETE FROM TEMP;`);
-  await connection.query(`DELETE FROM TEMP_CANDIDATO;`);
-  await connection.query(`DELETE FROM TEMP_CARGO;`);
-  await connection.query(`DELETE FROM TEMP_PARTIDO;`);
-  await connection.query(`DELETE FROM TEMP_MESA;`);
-  await connection.query(`DELETE FROM TEMP_DEPARTAMENTO;`);
-  await connection.query(`DELETE FROM TEMP_CIUDADANO;`);
-
-  res.send("Tabla temporal eliminada");
-};
-
-exports.cargarmodelo = async (req, res) => {
+  //////////////////////////////// FIN CARGAR DATOS EN TABLAS TEMPORALES ////////////////////////////////
+  //////////////////////////////// CARGAR DATOS MODELO ////////////////////////////////
   let [result, error] = await connection.query(`SELECT * FROM TEMP_CIUDADANO;`);
 
   //Cargar datos en la tabla ciudadano
@@ -380,5 +377,18 @@ exports.cargarmodelo = async (req, res) => {
 
   console.log("detalle de votos cargados");
 
-  res.send("Datos cargados");
+  //////////////////////////////// FIN CARGAR DATOS MODELO ////////////////////////////////
+  //////////////////////////////// ELIMINAR DATOS TABLAS TEMPORALES ////////////////////////////////
+
+  await connection.query(`DELETE FROM TEMP;`);
+  await connection.query(`DELETE FROM TEMP_CANDIDATO;`);
+  await connection.query(`DELETE FROM TEMP_CARGO;`);
+  await connection.query(`DELETE FROM TEMP_PARTIDO;`);
+  await connection.query(`DELETE FROM TEMP_MESA;`);
+  await connection.query(`DELETE FROM TEMP_DEPARTAMENTO;`);
+  await connection.query(`DELETE FROM TEMP_CIUDADANO;`);
+
+  //////////////////////////////// FIN ELIMINAR DATOS TABLAS TEMPORALES ////////////////////////////////
+
+  res.send("MODELO CARGADO");
 };

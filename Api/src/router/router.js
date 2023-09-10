@@ -9,8 +9,6 @@ const fillController = require('../controller/fillController');
 router.get('/crearmodelo', fillController.crearmodelo);
 router.get('/eliminarmodelo', fillController.eliminarmodelo);
 router.get('/cargartabtemp', fillController.cargartabtemp);
-router.get('/eliminartabtemp', fillController.eliminartabtemp);
-router.get('/cargarmodelo', fillController.cargarmodelo);
 
 // Query routes
 router.get('/consulta1', queryController.consulta1);
