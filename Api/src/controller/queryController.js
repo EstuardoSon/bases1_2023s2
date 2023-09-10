@@ -3,6 +3,7 @@ const { error } = require("console");
 const connection = getConnection();
 
 exports.consulta1 = async (req, res) => {
+  // Obtener los presidentes y vicepresidentes por partido
   const result = await connection.query(`SELECT
   P.nombre AS presidente,
   V.nombre AS vicepresidente,
@@ -21,6 +22,7 @@ WHERE
 };
 
 exports.consulta2 = async (req, res) => {
+  // Obtener la cantidad de diputados por partido
   const result = await connection.query(`SELECT
     Partido.nombre AS partido,
     SUM(CASE WHEN C.cargo = 3 THEN 1 ELSE 0 END) AS "Diputados congreso lista nacional",
@@ -40,6 +42,7 @@ GROUP BY
 };
 
 exports.consulta3 = async (req, res) => {
+  // Obtener los alcaldes por partido
   const result =
     await connection.query(`SELECT Partido.nombre as partido, C.nombre as alcalde
     FROM Candidato C
@@ -53,6 +56,7 @@ exports.consulta3 = async (req, res) => {
 };
 
 exports.consulta4 = async (req, res) => {
+  // Obtener la cantidad de candidatos por partido
   const result = await connection.query(`SELECT P.nombre as partido, 
   SUM(CASE WHEN C.cargo = 1 THEN 1 ELSE 0 END) as presidente,
   SUM(CASE WHEN C.cargo = 2 THEN 1 ELSE 0 END) as vicepresidente,
@@ -69,6 +73,7 @@ exports.consulta4 = async (req, res) => {
 };
 
 exports.consulta5 = async (req, res) => {
+  // Obtener la cantidad de votos por departamento
   const result =
     await connection.query(`SELECT D.nombre AS DEPARTAMENTO, COUNT(V.id) AS "CANTIDAD DE VOTOS" FROM DEPARTAMENTO D 
     INNER JOIN MESA M ON M.departamento = D.id 
@@ -80,6 +85,7 @@ exports.consulta5 = async (req, res) => {
 };
 
 exports.consulta6 = async (req, res) => {
+  // Obtener la cantidad de votos nulos
   const result =
     await connection.query(`SELECT COUNT(DISTINCT DV.voto) as "VOTO NULOS" FROM DETALLE_VOTO DV
     INNER JOIN VOTO V ON V.id = DV.voto
@@ -89,6 +95,7 @@ exports.consulta6 = async (req, res) => {
 };
 
 exports.consulta7 = async (req, res) => {
+  // Obtener los 10 rangos de edad con mas votos
   const result =
     await connection.query(`SELECT C.edad, COUNT(C.dpi) as Cantidad FROM VOTO V 
     INNER JOIN 
@@ -103,6 +110,7 @@ exports.consulta7 = async (req, res) => {
 };
 
 exports.consulta8 = async (req, res) => {
+  // Obtener los 10 presidentes y vicepresidentes con mas votos
   const result = await connection.query(`SELECT
     P.nombre AS presidente,
     V.nombre AS vicepresidente,
@@ -123,6 +131,7 @@ ORDER BY COUNT(P.id) DESC LIMIT 10;`);
 };
 
 exports.consulta9 = async (req, res) => {
+  // Obtener los 5 departamentos con mas votantes
   const result =
     await connection.query(`SELECT V.mesa, D.nombre, COUNT(V.mesa) AS "Cantidad votantes"
   FROM VOTO V 
@@ -138,6 +147,7 @@ exports.consulta9 = async (req, res) => {
 };
 
 exports.consulta10 = async (req, res) => {
+  // Obtener las 5 horas con mas votos
   const result = await connection.query(
     `SELECT TIME(V.fecha_hora) AS HORA, COUNT(V.fecha_hora) AS CANTIDAD FROM VOTO V GROUP BY V.fecha_hora ORDER BY COUNT(V.fecha_hora) DESC LIMIT 5;`
   );
@@ -146,6 +156,7 @@ exports.consulta10 = async (req, res) => {
 };
 
 exports.consulta11 = async (req, res) => {
+  // Obtener la cantidad de votos por genero
   const result = await connection.query(
     `SELECT C.genero, COUNT(C.genero) AS "Cantidad de votos" FROM CIUDADANO C 
     INNER JOIN 
