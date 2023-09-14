@@ -37,6 +37,17 @@
 <colAssociation fkAssociation="2BEC221B-2C82-0340-4167-1E998F5ECF10" referredColumn="D68905D9-7482-8566-6190-93A868261D65"/>
 </associations>
 </Column>
+<Column name="id" id="447F5209-6D7C-829D-EBE7-8558C19F199A">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-09-13 23:37:59 UTC</createdTime>
+<generatorID>4ED8E3FA-001C-177D-FC12-62195CF0B7CF</generatorID>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
 <ind_PK_UK id="E1348191-8EFB-B8D6-7352-84DF0160D4F9" name="DETALLE_VOTO_PK">
@@ -47,6 +58,9 @@
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="447F5209-6D7C-829D-EBE7-8558C19F199A"/>
+</indexColumnUsage>
 </ind_PK_UK>
 <ind_PK_UK id="C7123433-EBA6-32F2-96F8-9189FEC9EA94" name="DETALLE_VOTO_CANDIDATO_FK">
 <createdBy>sonmu</createdBy>

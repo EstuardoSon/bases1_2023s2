@@ -15,6 +15,18 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="id" id="4ED8E3FA-001C-177D-FC12-62195CF0B7CF">
+<createdBy>sonmu</createdBy>
+<createdTime>2023-09-13 23:36:54 UTC</createdTime>
+<ownerDesignName>Modelo_Proyecto</ownerDesignName>
+<engineerTo>
+<item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="id_candidato" id="A5C46A09-33D8-D28D-8711-D15B4D966CE9">
 <createdBy>sonmu</createdBy>
 <createdTime>2023-08-29 16:56:15 UTC</createdTime>
@@ -53,6 +65,9 @@
 <item key="17C63058-11E1-5331-2E18-E39325285424" value="true"/>
 </engineerTo>
 <pk>true</pk>
+<usedAttributes>
+<attributeRef>4ED8E3FA-001C-177D-FC12-62195CF0B7CF</attributeRef>
+</usedAttributes>
 </identifier>
 </identifiers>
 </Entity>

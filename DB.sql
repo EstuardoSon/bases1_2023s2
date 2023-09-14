@@ -56,6 +56,7 @@ FOREIGN KEY (cargo) REFERENCES CARGO(id)
 );
 
 CREATE TABLE DETALLE_VOTO(
+id int primary key auto_increment,
 candidato INT,
 voto INT,
 FOREIGN KEY(candidato) REFERENCES CANDIDATO(id),

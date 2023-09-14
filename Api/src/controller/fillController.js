@@ -27,7 +27,7 @@ exports.crearmodelo = async (req, res) => {
     `CREATE TABLE IF NOT EXISTS CANDIDATO(id INT PRIMARY KEY,nombre VARCHAR(100),fecha_nac DATE,partido INT, cargo INT,FOREIGN KEY (partido) REFERENCES PARTIDO(id),FOREIGN KEY (cargo) REFERENCES CARGO(id));`
   );
   const result5 = await connection.query(
-    `CREATE TABLE IF NOT EXISTS DETALLE_VOTO(candidato INT,voto INT,FOREIGN KEY(candidato) REFERENCES CANDIDATO(id),FOREIGN KEY(voto) REFERENCES VOTO(id));`
+    `CREATE TABLE IF NOT EXISTS DETALLE_VOTO(id int primary key auto_increment, candidato INT,voto INT,FOREIGN KEY(candidato) REFERENCES CANDIDATO(id),FOREIGN KEY(voto) REFERENCES VOTO(id));`
   );
 
   res.send("Modelo creado");
@@ -365,7 +365,7 @@ exports.cargartabtemp = async (req, res) => {
   //Cargar datos en la tabla detalle_voto
   for (const element of result) {
     try {
-      await connection.query(`INSERT INTO DETALLE_VOTO VALUES(?,?);`, [
+      await connection.query(`INSERT INTO DETALLE_VOTO(candidato, voto) VALUES(?,?);`, [
         element.id_candidato,
         element.id_voto,
       ]);
