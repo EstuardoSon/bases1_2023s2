@@ -1,6 +1,6 @@
 const fs = require("fs");
 const { getConnection } = require("../database/database");
-const { error } = require("console");
+const { error, Console } = require("console");
 const connection = getConnection();
 
 exports.crearmodelo = async (req, res) => {
@@ -50,36 +50,38 @@ exports.eliminarmodelo = async (req, res) => {
 exports.cargartabtemp = async (req, res) => {
   //////////////////////////////// CARGAR DATOS EN TABLAS TEMPORALES ////////////////////////////////
 
+  console.log("CREAR TABLAS TEMPORALES");
   // Creación de las tablas temporales
   await connection.query(
-    `CREATE TABLE IF NOT EXISTS TEMP(id_voto int,id_candidato int,dpi varchar(13),mesa int,fecha_hora datetime);`
+    `CREATE TEMPORARY TABLE IF NOT EXISTS TEMP(id_voto int,id_candidato int,dpi varchar(13),mesa int,fecha_hora datetime);`
   );
 
   await connection.query(
-    `CREATE TABLE IF NOT EXISTS TEMP_CIUDADANO(dpi varchar(13),nombre varchar(50),apellido varchar(50),direccion varchar(100),telefono varchar(15), edad int, genero varchar(10));`
+    `CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_CIUDADANO(dpi varchar(13),nombre varchar(50),apellido varchar(50),direccion varchar(100),telefono varchar(15), edad int, genero varchar(10));`
   );
 
   await connection.query(
-    `CREATE TABLE IF NOT EXISTS TEMP_DEPARTAMENTO(id int, nombre varchar(50));`
+    `CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_DEPARTAMENTO(id int, nombre varchar(50));`
   );
 
   await connection.query(
-    `CREATE TABLE IF NOT EXISTS TEMP_MESA(id int, departamento int);`
+    `CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_MESA(id int, departamento int);`
   );
 
   await connection.query(
-    `CREATE TABLE IF NOT EXISTS TEMP_PARTIDO(id int, nombre varchar(100), siglas varchar(20), fecha_funda date);`
+    `CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_PARTIDO(id int, nombre varchar(100), siglas varchar(20), fecha_funda date);`
   );
 
   await connection.query(
-    `CREATE TABLE IF NOT EXISTS TEMP_CARGO(id int, cargo varchar(50));`
+    `CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_CARGO(id int, cargo varchar(50));`
   );
 
   await connection.query(
-    `CREATE TABLE IF NOT EXISTS TEMP_CANDIDATO(id int, nombre varchar(100), fecha_nac date, partido int, cargo int);`
+    `CREATE TEMPORARY TABLE IF NOT EXISTS TEMP_CANDIDATO(id int, nombre varchar(100), fecha_nac date, partido int, cargo int);`
   );
 
-  console.log("tablas temporales creadas");
+  console.log("TABLAS TEMPORALES CREADAS");
+  console.log("CARGAR DATOS EN TABLAS TEMPORALES");
 
   // Lectura del archivo votaciones.csv
   let data = fs.readFileSync("src/csv/votaciones.csv", "utf8");
@@ -230,6 +232,10 @@ exports.cargartabtemp = async (req, res) => {
   console.log("candidatos cargados");
 
   //////////////////////////////// FIN CARGAR DATOS EN TABLAS TEMPORALES ////////////////////////////////
+
+  console.log("TABLAS TEMPORALES CARGADAS");
+  console.log("CARGAR DATOS AL MODELO");
+
   //////////////////////////////// CARGAR DATOS MODELO ////////////////////////////////
   let [result, error] = await connection.query(`SELECT * FROM TEMP_CIUDADANO;`);
 
@@ -378,6 +384,10 @@ exports.cargartabtemp = async (req, res) => {
   console.log("detalle de votos cargados");
 
   //////////////////////////////// FIN CARGAR DATOS MODELO ////////////////////////////////
+
+  console.log("DATOS CARGADOS AL MODELO");
+  console.log("ELIMINAR DATOS TABLAS TEMPORALES");
+
   //////////////////////////////// ELIMINAR DATOS TABLAS TEMPORALES ////////////////////////////////
 
   await connection.query(`DELETE FROM TEMP;`);
@@ -390,5 +400,6 @@ exports.cargartabtemp = async (req, res) => {
 
   //////////////////////////////// FIN ELIMINAR DATOS TABLAS TEMPORALES ////////////////////////////////
 
+  console.log("DATOS TABLAS TEMPORALES ELIMINADOS");
   res.send("MODELO CARGADO");
 };
